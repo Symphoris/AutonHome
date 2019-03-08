@@ -1,6 +1,6 @@
 package view;
 
-import com.connectionPool.JDBCConnectionPool;
+import connectionPool.JDBCConnectionPool;
 
 public class AppView {
 	public AppView() {}

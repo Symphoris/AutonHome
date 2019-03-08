@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import com.connectionPool.DataSource;
+import connectionPool.DataSource;
 
 
 public class Model {
@@ -61,7 +61,7 @@ public class Model {
      public void closeConnection() {
 			try {
 				st.close();
-				cn.close();
+				ds.freeConnection(cn);
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

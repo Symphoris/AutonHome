@@ -1,10 +1,11 @@
 package controller;
 
+import java.sql.Connection;
 import java.util.Scanner;
-import model.Model.*;
-//import com.connectionPool.Config;
-import com.connectionPool.DataSource;
 
+import connectionPool.Config;
+import connectionPool.DataSource;
+import model.Model.*;
 import model.Model;
 //import view.AppView;
 
@@ -14,23 +15,28 @@ public class Controller {
 	//private AppView view;
 	
 	public Controller() {
-		Model model = new Model();
-		//Config.getConfig()
+		//Model model = new Model();
+		Config.getConfig();
 		this.start();
 		
 	}
 	public void start() {
 		//System.out.println(Config.getDriver());
 		System.out.println(DataSource.poolSize());
-		DataSource.getConnection();
+		System.out.println(DataSource.poolUsedSize());
+		Connection cn2=DataSource.getConnection();
+		System.out.println(cn2);
 		System.out.println(DataSource.poolSize());
-		DataSource.getConnection();
+		System.out.println(DataSource.poolUsedSize());
+		Connection cn1=DataSource.getConnection();
 		System.out.println(DataSource.poolSize());
+		System.out.println(DataSource.poolUsedSize());
 		DataSource.closeConnections();
 		System.out.println(DataSource.poolSize());
+		System.out.println(DataSource.poolUsedSize());
+	}
 		
-		
-		while(true) {
+		/*while(true) {
 			System.out.println("Taper :");
 			System.out.println("0 pour ajouter un capteur");
 			System.out.println("1 pour modifier un capteur");
@@ -73,6 +79,6 @@ public class Controller {
 			String table=sc.nextLine();
 			String label=sc.nextLine();
 			model.select(table, label);
-		}
+		}*/
 			
 }

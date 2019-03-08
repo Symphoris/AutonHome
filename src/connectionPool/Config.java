@@ -1,4 +1,4 @@
-package com.connectionPool;
+package connectionPool;
 
 
 import java.io.FileInputStream;
@@ -28,7 +28,7 @@ public class Config {
 			// charger le fichier properties
 			p.load(file);
 			
-			// recuperer les fichiers properties
+			// recuperer les fichier properties
 			Driver  = p.getProperty("Driver");
 			url = p.getProperty("url");
 			user = p.getProperty("user");

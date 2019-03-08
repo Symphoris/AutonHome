@@ -1,4 +1,4 @@
-package com.connectionPool;
+package connectionPool;
 import java.sql.*;
 import java.util.Vector;
 
@@ -61,7 +61,8 @@ public class JDBCConnectionPool {
 					if(poolUsed.size()<nb_max) {
 						a11 = DriverManager.getConnection(url,user,password);
 						poolUsed.add(a11);
-					}
+					
+					}else {System.out.println("erreur : limite de connexion atteinte");}
 				} 
 				catch (SQLException f) {}
 				

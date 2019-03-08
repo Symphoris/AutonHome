@@ -1,4 +1,4 @@
-package com.connectionPool;
+package connectionPool;
 import java.sql.Connection;
 public class DataSource {
 		//attribut
@@ -23,6 +23,10 @@ public class DataSource {
 		}
 		 public static int poolSize() {
 			 return jdbc.poolSize() ;
+		 }
+		 
+		 public static int poolUsedSize() {
+			 return jdbc.poolUsedSize() ;
 		 }
 		
 	
